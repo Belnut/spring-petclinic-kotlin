@@ -32,6 +32,10 @@ import java.util.*
 @WebMvcTest(OwnerController::class)
 class OwnerControllerTest {
 
+    // lateinit var 로 선언하면 초기화가 필요하다.
+    // ::mockMvc.initialized 를 통해 초기화 여부를 확인할 수 있다.
+    // 해당 변수를 초기화 하지 않고 사용하면 UninitializedPropertyAccessException 이 발생한다.
+    // contreoller 를 테스트하기 위해 사용하는 MockMvc 객체
     @Autowired
     lateinit private var mockMvc: MockMvc
 
